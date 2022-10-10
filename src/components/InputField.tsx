@@ -10,9 +10,9 @@ interface Props {
 const InputField: React.FC<Props> = ({ input, setInput, handleAdd }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
-    inputRef.current?.focus()
-  }, [])
-  
+    inputRef.current?.focus();
+  }, []);
+
   return (
     <form
       onSubmit={(e) => {
@@ -28,7 +28,6 @@ const InputField: React.FC<Props> = ({ input, setInput, handleAdd }) => {
         className="input-field"
         ref={inputRef}
       />
-      <button type="submit">submit</button>
     </form>
   );
 };

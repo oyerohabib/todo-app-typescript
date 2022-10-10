@@ -27,17 +27,18 @@ const App: React.FC = () => {
     )
       return;
     let add,
-      active = todos,
+      uncompleted = todos,
       completed = completedTodos;
-    if (source.droppableId === "completed-todo") {
-      add = active[source.index];
-      active.splice(source.index, 1);
+
+    if (source.droppableId === "uncompleted-todo") {
+      add = uncompleted[source.index];
+      uncompleted.splice(source.index, 1);
     } else {
       add = completed[source.index];
       completed.splice(source.index, 1);
     }
-    if (destination.droppableId === "completed-todo") {
-      active.splice(destination.index, 0, add);
+    if (destination.droppableId === "uncompleted-todo") {
+      uncompleted.splice(destination.index, 0, add);
     } else {
       completed.splice(destination.index, 0, add);
     }

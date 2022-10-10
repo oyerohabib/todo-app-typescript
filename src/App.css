@@ -38,7 +38,12 @@ form input:focus {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  max-width: 800px;
+}
+
+@media screen and (max-width: 992px) {
+  .todo-group {
+    flex-direction: column;
+  }
 }
 
 .todo-group .completed {

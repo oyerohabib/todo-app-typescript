@@ -18,7 +18,7 @@ const TodoList: React.FC<Props> = ({
 }) => {
   return (
     <div className="todo-group">
-      <Droppable droppableId="completed-todo">
+      <Droppable droppableId="uncompleted-todo">
         {(provided, snapshot) => (
           <div
             className={`todos completed ${
@@ -27,7 +27,7 @@ const TodoList: React.FC<Props> = ({
             ref={provided.innerRef}
             {...provided.droppableProps}
           >
-            <h3>Completed</h3>
+            <h3>Uncompleted</h3>
             {todos.map((todo, index) => (
               <SingleTodo
                 key={todo.id}
@@ -41,7 +41,7 @@ const TodoList: React.FC<Props> = ({
           </div>
         )}
       </Droppable>
-      <Droppable droppableId="uncompleted-todo">
+      <Droppable droppableId="completed-todo">
         {(provided, snapshot) => (
           <div
             className={`todos uncompleted ${
@@ -50,7 +50,7 @@ const TodoList: React.FC<Props> = ({
             ref={provided.innerRef}
             {...provided.droppableProps}
           >
-            <h3>Uncompleted</h3>
+            <h3>Completed</h3>
             {completedTodos.map((todo, index) => (
               <SingleTodo
                 key={todo.id}
